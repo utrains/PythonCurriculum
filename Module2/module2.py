@@ -1,3 +1,6 @@
+"""Module 2: Python Basics – Variables and Data Types"""
+
+
 """
 In this module, we will learn how to declare variables, understand different data types, perform type conversion, and check variable types in Python.
 
