@@ -57,3 +57,8 @@ Python vs. JavaScript – Python is mainly for backend applications, whereas Jav
 
 """
 
+"""
+5>Write a program that takes the user's name and prints a greeting message.
+6>Ask the user for two numbers and print their sum, difference, product, and quotient.
+7>Create a program that asks for the user's age and prints a message stating how old they will be in 5 years.
+"""

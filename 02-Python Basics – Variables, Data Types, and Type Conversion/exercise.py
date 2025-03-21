@@ -29,3 +29,10 @@ print(type(x))  # Output: <class 'int'>
 
 y = "Hello"
 print(type(y))  # Output: <class 'str'>
+
+
+"""
+5>Create a program that takes a user’s name and age as input and prints a greeting message.
+6>Ask the user for two numbers and print their sum, difference, product, and quotient.
+7>Take a decimal number as input, convert it to an integer, and print both values.
+"""
