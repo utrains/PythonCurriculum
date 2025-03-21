@@ -57,6 +57,21 @@ print(fruits)
 """
 Common List Methods
 """
+"""append()
+extend()
+insert()
+remove()
+pop()
+clear()
+index()
+count()
+sort()
+reverse()
+copy()"""
+
+
+
+
 """append() – Add an Element at the End"""
 
 fruits = ["apple", "banana"]
@@ -202,8 +217,10 @@ fruits = ("apple", "banana", "cherry")
 # Trying to change an element (will cause an error)
 #fruits[1] = "blueberry"
 
+
+
 """
-Common Tuple Operations
+Common Tuple methods
 """
 
 #count() – Count Occurrences of an Element
@@ -325,6 +342,18 @@ print(student)
 
 
 """Common Dictionary Methods"""
+
+"""clear()
+copy()
+fromkeys(iterable, value)
+get(key, default)
+items()
+keys()
+values()
+pop(key, default)
+popitem()
+setdefault(key, default)
+update(iterable or dictionary)"""
 
 #keys() – Get All Keys
 
