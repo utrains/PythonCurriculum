@@ -1,4 +1,4 @@
-# 📘 Python Fundamentals Course
+# 📘 Utrains :- Python Fundamentals Course
 
 ## 📌 Course Overview
 This course covers the fundamentals of Python programming, starting from basic syntax to file handling. Each module includes conceptual understanding, examples, and exercises.
@@ -266,4 +266,179 @@ print(type(z))  # <class 'float'>
 print(isinstance(42, int))             # True
 print(isinstance("Python", float))     # False
 print(isinstance(3.14, (int, float)))  # True
+```
+
+
+### 🟣 Module 3: Strings in Python
+
+---
+
+#### 1️⃣ Introduction to Strings
+
+A **string** in Python is a sequence of characters enclosed within single (`'`), double (`"`), or triple (`'''` or `"""`) quotes.
+
+**Key Properties of Strings**  
+✅ Immutable: Strings cannot be modified once created  
+✅ Indexed: Characters can be accessed using positive and negative indices  
+✅ Iterable: Strings can be looped through character by character  
+
+---
+
+#### 2️⃣ Creating Strings in Python
+
+Python allows multiple ways to create a string:
+
+```python
+# Using single, double, and triple quotes
+str1 = 'Hello'
+str2 = "World"
+str3 = '''Multiline 
+string using triple quotes.'''
+
+print(str1, str2, str3)
+```
+
+3️⃣ String Indexing and Slicing
+
+
+### 🔹 String Indexing Table
+
+| Characters         | P  | Y  | T  | H  | O  | N  |
+|--------------------|----|----|----|----|----|----|
+| Forward Indexing   | 0  | 1  | 2  | 3  | 4  | 5  |
+| Reverse Indexing   | -6 | -5 | -4 | -3 | -2 | -1 |
+
+String Indexing:
+```python
+word = "Python"
+print(word[0])    # P (First character)
+print(word[-1])   # n (Last character)
+```
+
+String Slicing:
+```python
+word = "Programming"
+print(word[0:5])    # Output: Progr (0 to 4)
+print(word[:6])     # Output: Progra (0 to 5)
+print(word[3:])     # Output: gramming (from index 3 to end)
+print(word[::2])    # Output: Pormig (every 2nd character)
+print(word[::-1])   # Output: gnimmargorP (Reversed string)
+```
+
+4️⃣ Built-in String Methods (Raw Markdown Table)
+
+| Method               | Description                                         |
+|----------------------|-----------------------------------------------------|
+| `capitalize()`       | Capitalizes first letter                            |
+| `casefold()`         | Converts to lowercase (more aggressive)             |
+| `center(width)`      | Centers string in a given width                     |
+| `count(substring)`   | Counts occurrences of a substring                   |
+| `encode()`           | Converts string to bytes                            |
+| `endswith(suffix)`   | Checks if string ends with the given suffix         |
+| `expandtabs(size)`   | Replaces tabs with spaces                           |
+| `find(substring)`    | Returns the index of first occurrence               |
+| `index(substring)`   | Same as find but raises error if not found          |
+| `isalnum()`          | Checks if all characters are alphanumeric           |
+| `isalpha()`          | Checks if all characters are letters                |
+| `isdigit()`          | Checks if all characters are digits                 |
+| `islower()`          | Checks if all characters are lowercase              |
+| `isspace()`          | Checks if all characters are whitespace             |
+| `istitle()`          | Checks if string is title-cased                     |
+| `isupper()`          | Checks if all characters are uppercase              |
+| `join(iterable)`     | Joins elements of an iterable with the string       |
+| `ljust(width)`       | Left-aligns string within given width               |
+| `lower()`            | Converts to lowercase                               |
+| `lstrip()`           | Removes leading whitespace                          |
+| `replace(old, new)`  | Replaces old substring with new                     |
+| `rfind(substring)`   | Finds last occurrence of substring                  |
+| `rindex(substring)`  | Like rfind, but raises error if not found           |
+| `rjust(width)`       | Right-aligns string                                 |
+| `rstrip()`           | Removes trailing whitespace                         |
+| `split(sep)`         | Splits string into list                             |
+| `splitlines()`       | Splits string at line breaks                        |
+| `startswith(prefix)` | Checks if string starts with given prefix           |
+| `strip()`            | Removes leading/trailing whitespace                 |
+| `swapcase()`         | Swaps case of all characters                        |
+| `title()`            | Converts to title case                              |
+| `upper()`            | Converts to uppercase                               |
+| `zfill(width)`       | Pads string with zeros                              |
+
+
+5️⃣ String Methods and Functions
+```python
+# Finding String Length
+text = "Python"
+print(len(text))  # Output: 6
+
+# Changing Case
+text = "hello world"
+print(text.upper())       # HELLO WORLD
+print(text.lower())       # hello world
+print(text.title())       # Hello World
+print(text.capitalize())  # Hello world
+
+# Checking String Content
+print("Python".isalpha())    # True
+print("1234".isdigit())      # True
+print("Hello123".isalnum())  # True
+print("   ".isspace())       # True
+
+# Searching in Strings
+text = "Python programming"
+print(text.find("prog"))  # Output: 7
+print(text.count("o"))    # Output: 2
+
+# Replacing and Splitting
+text = "I love Python"
+print(text.replace("love", "like"))  # I like Python
+
+words = text.split()
+print(words)  # ['I', 'love', 'Python']
+
+joined = "-".join(words)
+print(joined)  # I-love-Python
+
+# Checking Prefix and Suffix
+text = "hello.py"
+print(text.startswith("hello"))  # True
+print(text.endswith(".py"))      # True
+
+# Stripping Whitespace
+text = "  hello  "
+print(text.strip())   # 'hello'
+print(text.lstrip())  # 'hello  '
+print(text.rstrip())  # '  hello'
+```
+
+6️⃣ String Formatting
+
+```python
+# Using format()
+name = "Alice"
+age = 25
+print("My name is {} and I am {} years old.".format(name, age))
+```
+```python
+# Using f-strings (Python 3.6+)
+print(f"My name is {name} and I am {age} years old.")
+```
+
+7️⃣ Escape Sequences
+
+| Escape Sequence | Meaning     |
+|------------------|-------------|
+| `\n`             | Newline     |
+| `\t`             | Tab         |
+| `\\`             | Backslash   |
+
+```python
+print("Hello\nWorld")  # Newline
+print("Name:\tAlice")  # Tab
+```
+
+8️⃣ Raw Strings
+
+```python
+# Raw strings ignore escape sequences
+print(r"C:\newfolder\test")  # Output: C:\newfolder\test
 ```
