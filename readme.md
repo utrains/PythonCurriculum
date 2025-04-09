@@ -969,3 +969,232 @@ print(fruits)
 append(), extend(), insert(), remove(), pop(), clear(), 
 index(), count(), sort(), reverse(), copy()
 ```
+
+📋 Method Reference Table
+
+| Method        | Description                                 |
+|---------------|---------------------------------------------|
+| append()      | Adds a single element at the end            |
+| extend()      | Adds multiple elements from another list    |
+| insert()      | Inserts an element at a specific index      |
+| remove()      | Removes the first occurrence of a value     |
+| pop()         | Removes and returns element by index        |
+| clear()       | Removes all elements from the list          |
+| index()       | Returns the first index of a value          |
+| count()       | Counts how many times a value appears       |
+| sort()        | Sorts the list in ascending order           |
+| reverse()     | Reverses the list order                     |
+| copy()        | Returns a shallow copy of the list          |
+
+Examples:
+
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)
+
+numbers = [1, 2, 3]
+numbers.extend([4, 5])
+print(numbers)
+
+colors = ["red", "blue", "green"]
+colors.insert(1, "yellow")
+print(colors)
+
+🎯 List Comprehension
+
+```python
+# Squares of numbers
+squares = [x**2 for x in range(1, 6)]
+print(squares)
+
+# Filter even numbers
+numbers = [1, 2, 3, 4, 5, 6]
+evens = [num for num in numbers if num % 2 == 0]
+print(evens)
+
+```
+
+📦 Tuples in Python (Ordered & Immutable)
+📖 Introduction to Tuples
+A tuple is similar to a list but immutable (cannot be changed once created).
+
+```python
+# Creating Tuples
+empty_tuple = ()
+mixed_tuple = (10, "Python", 3.14, True)
+single_element = (5,)  # Important: Comma needed
+nested_tuple = ((1, 2), ("a", "b"))
+
+print(mixed_tuple)
+```
+
+🧭 Indexing & Slicing Tuples
+```python
+numbers = (10, 20, 30, 40, 50)
+print(numbers[0])      # First element
+print(numbers[-1])     # Last element
+print(numbers[1:4])    # Slice → (20, 30, 40)
+```
+
+⚠️ Tuple Immutability
+```python
+fruits = ("apple", "banana", "cherry")
+# fruits[1] = "blueberry"  ❌ Error!
+```
+
+🔧 Common Tuple Methods
+```python
+numbers = (1, 2, 1, 4, 1)
+print(numbers.count(1))     # → 3
+print(numbers.index(4))     # → 3
+```
+
+📦 Tuple Packing & Unpacking
+```python
+person = ("John", 25, "Engineer")
+name, age, job = person
+print(name, age, job)
+```
+
+🔁 Conversion Between List and Tuple
+```python
+# List → Tuple
+lst = [1, 2, 3]
+tpl = tuple(lst)
+
+# Tuple → List
+tpl2 = ("red", "green")
+lst2 = list(tpl2)
+```
+
+🗂️ Dictionaries in Python (Key-Value Pairs)
+📖 Introduction
+A dictionary stores data in key-value format. Keys must be unique.
+
+```python
+student = {
+    "name": "Alice",
+    "age": 22,
+    "grade": "A",
+    "subjects": ["Math", "Physics"]
+}
+```
+
+🔍 Accessing & Modifying Dictionary
+
+```python
+print(student["name"])          # Alice
+print(student.get("email", "N/A"))  # Safe access
+
+
+# Modify
+student["city"] = "New York"
+student["grade"] = "A+"
+del student["age"]
+```
+
+🔧 Common Dictionary Methods
+| Method         | Description                                      |
+|----------------|--------------------------------------------------|
+| get()          | Gets value of a key safely                       |
+| keys()         | Returns all keys                                 |
+| values()       | Returns all values                               |
+| items()        | Returns all key-value pairs                      |
+| update()       | Merges another dictionary                        |
+| pop()          | Removes item by key                              |
+| popitem()      | Removes the last inserted item                   |
+| setdefault()   | Sets a default value if key doesn't exist        |
+| clear()        | Clears all entries                               |
+
+
+```python
+student.update({"hobby": "Reading"})
+student.pop("city")
+student.popitem()
+```
+
+🔁 Looping Through Dictionary
+
+```python
+for key in student:
+    print(key, ":", student[key])
+
+for key, value in student.items():
+    print(f"{key} -> {value}")
+```
+
+🧩 Nested Dictionary
+
+```python
+company = {
+    "emp1": {"name": "John", "role": "Manager"},
+    "emp2": {"name": "Alice", "role": "Dev"}
+}
+print(company["emp1"]["role"])  # Manager
+```
+
+🧠 Dictionary Comprehension
+
+```python
+squares = {x: x**2 for x in range(1, 6)}
+print(squares)
+```
+
+
+🔗 Sets in Python (Unordered & Unique)
+📖 Introduction
+A set is:
+
+Unordered
+
+Mutable
+
+Contains unique elements
+
+```python
+fruits = {"apple", "banana", "apple", "cherry"}
+print(fruits)  # Duplicates removed
+```
+
+🧪 Set Operations
+
+| Operation             | Syntax                    | Description                      |
+|-----------------------|---------------------------|----------------------------------|
+| Union                 | A.union(B)                | Combines all unique elements     |
+| Intersection          | A.intersection(B)         | Common elements only             |
+| Difference            | A.difference(B)           | Elements in A not in B           |
+| Symmetric Difference  | A.symmetric_difference(B) | Unique in A or B, not both       |
+
+
+```python
+A = {1, 2, 3}
+B = {3, 4, 5}
+print(A.union(B))             # → {1, 2, 3, 4, 5}
+print(A.intersection(B))      # → {3}
+print(A.difference(B))        # → {1, 2}
+print(A.symmetric_difference(B))  # → {1, 2, 4, 5}
+```
+
+
+⚙️ Modifying Sets
+```python
+fruits.add("orange")
+fruits.update(["grape", "mango"])
+
+fruits.remove("banana")   # ❌ Error if not found
+fruits.discard("banana")  # ✅ No error
+random_element = fruits.pop()
+fruits.clear()
+```
+
+🔁 Iterating Sets
+```python
+for item in fruits:
+    print(item)
+```
+
+🧠 Set Comprehension
+```python
+squared = {x**2 for x in range(1, 6)}
+print(squared)  # → {1, 4, 9, 16, 25}
+```
