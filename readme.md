@@ -51,29 +51,37 @@ Python is a high-level, interpreted programming language developed by **Guido va
 
 ```bash
 python --version
-
+```
 🐧 Linux (Ubuntu) or 🖥️ macOS:
 
 Check version:
+```bash
 python3 --version
+```
 
 If not installed:
 # For Ubuntu/Debian
+```bash
 sudo apt install python3
-
+```
 # For macOS (using Homebrew)
+```bash
 brew install python
+```
 
 🔹 4. Writing and Running Your First Python Script
-
+```python
 print("Hello, World!")
+```
 
 Save this code in a file called hello.py and run it using:
-
+```python
 python hello.py
+```
 
 🔹 5. Basic Arithmetic Operations in Python
 
+```python
 a = 10
 b = 5
 
@@ -82,29 +90,35 @@ print("Subtraction:", a - b)
 print("Multiplication:", a * b)
 print("Division:", a / b)
 print("Modulus:", a % b)
-
+```
 
 🔹 6. Introduction to print() and input() Functions
-✅ print() – Display Output:
 
+✅ print() – Display Output:
+```python
 print("Welcome to Python!")
 print("My name is John.")
 print("The sum of 5 and 3 is:", 5 + 3)
+```
 
 ✅ input() – Take User Input:
-
+```python
 name = input("Enter your name: ")
 print("Hello, " + name + "! Welcome to Python.")
-
+```
 🔹 7. Simple Interactive Program
+```python
 num1 = input("Enter first number: ")
 num2 = input("Enter second number: ")
+```
 
 # Converting input to integers
+```python
 num1 = int(num1)
 num2 = int(num2)
 
 print("Sum:", num1 + num2)
+```
 
 💡 Why convert to int?
 The input() function returns a string. Arithmetic operations require numeric types like int or float.
