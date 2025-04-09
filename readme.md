@@ -592,3 +592,331 @@ print("grape" not in fruits)  # True
 
 
 
+
+
+# 🧭 Module 5: Control Flow Statements
+
+Control flow statements allow programs to make decisions and repeat code blocks based on conditions.
+
+---
+
+## ✅ 1. Conditional Statements
+
+### 🔹 1.1 The `if` Statement
+
+Executes a block of code **only if** the condition is `True`.
+
+**🔧 Syntax:**
+```python
+if condition:
+    # Code to execute if condition is True
+```
+
+📌 Example: Check if a number is positive
+
+num = int(input("Enter a number: "))
+```python
+if num > 0:
+    print("The number is positive.")
+```
+
+🔹 1.2 The if-else Statement
+Executes one of two blocks depending on the condition.
+
+🔸 if-else Flow
+
+        ┌───────────────┐
+        │  Condition ?  │
+        └─────┬─────────┘
+              │
+        ┌─────▼───────┐
+     Yes│  Execute     │
+        │  if-block    │
+        └─────┬────────┘
+              │
+           ┌──▼──┐
+           │ End │
+           └─────┘
+              │
+             No
+              │
+        ┌─────▼───────┐
+        │ Execute     │
+        │ else-block  │
+        └─────┬────────┘
+              │
+           ┌──▼──┐
+           │ End │
+           └─────┘
+
+
+🔧 Syntax:
+```python
+if condition:
+    # Executes if condition is True
+else:
+    # Executes if condition is False
+```
+
+📌 Example: Even or Odd
+```python
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+```
+
+
+🔹 1.3 The if-elif-else Ladder
+Used to test multiple conditions.
+
+🔸 if-elif-else Flow
+
+         ┌──────────────┐
+         │ Condition 1? │
+         └─────┬────────┘
+               │Yes
+         ┌─────▼───────┐
+         │ Execute     │
+         │ if-block    │
+         └─────┬────────┘
+               │
+            ┌──▼──┐
+            │ End │
+            └─────┘
+               │
+              No
+               │
+         ┌─────▼───────┐
+         │ Condition 2?│
+         └─────┬────────┘
+               │Yes
+         ┌─────▼───────┐
+         │ Execute     │
+         │ elif-block  │
+         └─────┬────────┘
+               │
+            ┌──▼──┐
+            │ End │
+            └─────┘
+               │
+              No
+               │
+         ┌─────▼───────┐
+         │ Execute     │
+         │ else-block  │
+         └─────┬────────┘
+               │
+            ┌──▼──┐
+            │ End │
+            └─────┘
+
+
+🔧 Syntax:
+```python
+if condition1:
+    # Executes if condition1 is True
+elif condition2:
+    # Executes if condition2 is True
+else:
+    # Executes if none are True
+```
+
+📌 Example: Positive, Negative, or Zero
+```python
+num = int(input("Enter a number: "))
+
+if num > 0:
+    print("Positive Number")
+elif num < 0:
+    print("Negative Number")
+else:
+    print("Zero")
+```
+
+🔁 2. Looping Constructs
+Loops are used to repeat a block of code.
+
+🔸 for Loop Flow
+
+        ┌───────────────┐
+        │  Initialize   │
+        │  Loop Var     │
+        └─────┬─────────┘
+              │
+        ┌─────▼───────┐
+        │ Condition ? │
+        └─────┬───────┘
+              │Yes
+        ┌─────▼────────┐
+        │ Execute Loop │
+        │   Body       │
+        └─────┬────────┘
+              │
+        ┌─────▼───────┐
+        │ Increment   │
+        │  Loop Var   │
+        └─────┬───────┘
+              │
+             (Repeat)
+              │
+             No
+              │
+        ┌─────▼────┐
+        │   End    │
+        └──────────┘
+
+
+🔹 Understanding range() Function
+Syntax:
+
+```python
+range(start, stop, step)
+```
+
+start: Optional, default is 0
+
+stop: Required (excluded)
+
+step: Optional, default is 1
+
+Example:
+```python
+for i in range(1, 6):
+    print(i)
+```
+
+Output:
+```python
+1
+2
+3
+4
+5
+```
+
+🔹 2.1 for Loop
+Used for iterating over sequences like list, tuple, string.
+
+📌 Example: Iterate 1 to 5
+```python
+for i in range(1, 6):
+    print(i)
+```
+
+📌 Example: Iterate Over List
+```python
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+```
+
+📌 Example: Iterate Over Tuple
+```python
+numbers = (10, 20, 30, 40)
+for num in numbers:
+    print(num)
+```
+
+📌 Example: Iterate Over String
+```python
+word = "Python"
+for char in word:
+    print(char)
+```
+
+🔹 2.2 while Loop
+Runs while the condition is True.
+
+🔸 while Loop Flow
+
+        ┌───────────────┐
+        │ Initialization│
+        └─────┬─────────┘
+              │
+        ┌─────▼───────┐
+        │ Condition ? │
+        └─────┬───────┘
+              │Yes
+        ┌─────▼────────┐
+        │ Execute Loop │
+        │   Body       │
+        └─────┬────────┘
+              │
+        ┌─────▼───────┐
+        │ Update      │
+        │ Condition   │
+        └─────┬───────┘
+              │
+             (Repeat)
+              │
+             No
+              │
+        ┌─────▼────┐
+        │   End    │
+        └──────────┘
+
+
+📌 Example: 1 to 5
+```python
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+```
+
+🔀 3. Control Statements (break, continue, pass)
+⛔ 3.1 break Statement
+Stops the loop immediately.
+
+📌 Example: Stop at 5
+```python
+for i in range(1, 11):
+    if i == 5:
+        break
+    print(i)
+```
+
+Output:
+```python
+1
+2
+3
+4
+```
+
+➿ 3.2 continue Statement
+Skips current iteration and continues.
+
+📌 Example: Skip 5
+
+```python
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)
+```
+
+```python
+1
+2
+3
+4
+6
+7
+8
+9
+10
+```
+
+📭 3.3 pass Statement
+Does nothing — used as a placeholder.
+
+📌 Example:
+```python
+for i in range(5):
+    pass  # Placeholder for future code
+```
+
