@@ -134,16 +134,18 @@ A **variable** is a name that refers to a value stored in memory. In Python, var
 **🔧 Syntax:**
 ```python
 variable_name = value
-
+```
 
 🧪 Example:
+
+```python
 name = "Alice"         # String variable
 age = 25               # Integer variable
 height = 5.6           # Float variable
 is_student = True      # Boolean variable
 
 print(name, age, height, is_student)
-
+```
 
 🔹 Variable Naming Rules
 ✅ Must start with a letter (a-z, A-Z) or underscore _
@@ -163,6 +165,29 @@ age_2024 = 30
 my-variable = 50    # Hyphens are not allowed
 if = 25             # 'if' is a reserved keyword
 
+
 🔹 2. Data Types in Python
 Python provides built-in types to store different kinds of values.
 
+| Data Type   | Description                         | Example       |
+|:------------|:------------------------------------|:--------------|
+| `int`       | Whole numbers                       | `10`, `-5`    |
+| `float`     | Decimal numbers                     | `3.14`, `2.0` |
+| `str`       | Sequence of characters (strings)    | `"Hello"`     |
+| `bool`      | Boolean values                      | `True`, `False` |
+| `NoneType`  | Represents the absence of a value   | `None`        |
+
+🧪 Examples:
+```python
+age = 25                 # int
+price = 19.99            # float
+message = "Hello"        # str
+is_python_easy = True    # bool
+nothing = None           # NoneType
+
+print(type(age))
+print(type(price))
+print(type(message))
+print(type(is_python_easy))
+print(type(nothing))
+```
