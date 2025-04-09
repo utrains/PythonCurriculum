@@ -920,3 +920,52 @@ for i in range(5):
     pass  # Placeholder for future code
 ```
 
+
+
+🧩 Module 6: Lists, Tuples, Dictionaries, and Sets in Python
+📌 Lists in Python (Ordered & Mutable)
+📖 Introduction to Lists
+A list in Python is an ordered, mutable collection that can hold multiple data types.
+You can add, update, delete, and rearrange elements easily.
+
+🛠️ Creating a List
+
+```python
+# Empty list
+empty_list = []
+
+# List with mixed data types
+mixed_list = [10, "Python", 3.14, True]
+
+# Nested list
+nested_list = [[1, 2, 3], ["a", "b", "c"]]
+
+print(mixed_list)
+print(nested_list)
+```
+
+🔍 Accessing Elements (Indexing & Slicing)
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+print(numbers[0])     # First element → 10
+print(numbers[-1])    # Last element → 50
+print(numbers[1:4])   # Sublist → [20, 30, 40]
+print(numbers[:3])    # → [10, 20, 30]
+print(numbers[::2])   # Every second element → [10, 30, 50]
+```
+
+📝 Modifying and Updating Lists
+```python
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "blueberry"  # Replace banana with blueberry
+print(fruits)
+```
+
+🔧 Common List Methods
+
+```scss
+append(), extend(), insert(), remove(), pop(), clear(), 
+index(), count(), sort(), reverse(), copy()
+```
