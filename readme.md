@@ -154,17 +154,17 @@ print(name, age, height, is_student)
 ✅ Cannot use Python reserved keywords (if, while, import, etc.)
 
 ✅ Valid Examples:
-
+```python
 my_variable = 10
 _myVar = "Python"
 age_2024 = 30
-
+```
 ❌ Invalid Examples:
-
+```python
 2name = "John"      # Cannot start with a number
 my-variable = 50    # Hyphens are not allowed
 if = 25             # 'if' is a reserved keyword
-
+```
 
 🔹 2. Data Types in Python
 Python provides built-in types to store different kinds of values.
@@ -190,4 +190,80 @@ print(type(price))
 print(type(message))
 print(type(is_python_easy))
 print(type(nothing))
+```
+
+### 🔄 3. Type Casting (Type Conversion)
+
+Python allows converting between data types using casting functions.
+
+| Function     | Description             | Example                  |
+|--------------|-------------------------|--------------------------|
+| `int(x)`     | Converts to Integer     | `int(3.9)` → `3`         |
+| `float(x)`   | Converts to Float       | `float("10")` → `10.0`   |
+| `str(x)`     | Converts to String      | `str(123)` → `"123"`     |
+| `bool(x)`    | Converts to Boolean     | `bool(0)` → `False`      |
+
+
+🧪 Example:
+```python
+num = 10
+print(type(num))     # <class 'int'>
+
+num_str = str(num)
+print(type(num_str)) # <class 'str'>
+
+pi = "3.14"
+pi_float = float(pi)
+print(type(pi_float)) # <class 'float'>
+```
+ℹ️ Notes:
+
+int(3.9) → 3 (decimal removed)
+
+float("10") → 10.0
+
+bool(0) → False, bool(1) → True
+
+🔹 Why Type Casting is Important with input()
+The input() function always returns a string, even for numeric inputs. You need type casting to perform arithmetic.
+
+🚫 Incorrect way (no casting):
+```python
+num1 = input("Enter first number: ")  # User enters 5
+num2 = input("Enter second number: ") # User enters 3
+print("Sum:", num1 + num2)  # Output: 53 (string concatenation)
+```
+
+✅ Correct way using int():
+```python
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print("Sum:", num1 + num2)  # Output: 8
+```
+
+✅ For decimal inputs using float():
+```python
+num1 = float(input("Enter first decimal number: "))
+num2 = float(input("Enter second decimal number: "))
+print("Sum:", num1 + num2)
+```
+
+🔹 4. Type Checking
+Python provides type() to check the variable's type and isinstance() to verify it against a specific type or tuple of types.
+
+🧪 Example:
+```python
+x = 42
+y = "Python"
+z = 3.14
+```
+```python
+print(type(x))  # <class 'int'>
+print(type(y))  # <class 'str'>
+print(type(z))  # <class 'float'>
+```
+```python
+print(isinstance(42, int))             # True
+print(isinstance("Python", float))     # False
+print(isinstance(3.14, (int, float)))  # True
 ```
