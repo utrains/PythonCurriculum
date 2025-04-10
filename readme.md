@@ -1198,3 +1198,281 @@ for item in fruits:
 squared = {x**2 for x in range(1, 6)}
 print(squared)  # → {1, 4, 9, 16, 25}
 ```
+
+
+### 🧠 Module 7: Python Functions
+
+Functions help in organizing code into reusable blocks. In this module, we’ll learn how to define and use functions effectively.
+
+🔹 1. Defining and Calling Functions
+
+A function is defined using the def keyword, followed by a name, parentheses () (with optional parameters), and a colon :
+
+```python
+# Function Definition
+def greet():
+    print("Hello! Welcome to Python.")
+
+# Function Call
+greet()
+```
+✅ A function must be defined before it's called.
+📝 Indentation is critical inside function blocks.
+
+
+
+🔹 2. Function Parameters and Return Values
+
+📌 2.1 Parameters vs. Arguments
+
+Parameters → Variables in the function definition.
+
+Arguments → Actual values passed when calling the function.
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Calling the function with an argument
+greet("Alice")
+```
+
+📌 2.2 Returning a Value
+
+Use return to send a value back to the caller.
+
+```python
+def square(num):
+    return num * num
+
+result = square(4)
+print("Square:", result)
+```
+🚫 A function stops execution once return is encountered.
+
+
+3️⃣ Types of Function Arguments
+
+### 🔹 3. Types of Function Arguments
+
+Python supports four types of function arguments:
+
+| Argument Type            | Description                                | Example                          |
+|--------------------------|--------------------------------------------|----------------------------------|
+| Positional Arguments     | Passed in the correct order                | `func(1, 2)`                     |
+| Default Arguments        | Parameters with default values             | `func(a=5, b=10)`                |
+| Keyword Arguments        | Specify argument names during function call| `func(b=10, a=5)`                |
+| Variable-Length Arguments| Accepts multiple values using *args/**kwargs| `func(1, 2, 3, key="value")`     |
+
+
+📌 3.1 Positional Arguments
+Arguments passed in the correct order.
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(3, 5))  # ✅
+# print(add(3))   # ❌ Error: missing argument
+```
+
+⚙️ 3.2 Default Arguments
+Assign default values if no argument is passed.
+
+```python
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+greet()         # Uses default → "Guest"
+greet("Alice")  # Overrides default
+```
+
+📝 Default parameters must be placed after non-defaults.
+
+🧾 3.3 Keyword Arguments
+Specify arguments using parameter names (order doesn't matter).
+
+```python
+def describe_pet(animal, name):
+    print(f"{name} is a {animal}.")
+
+describe_pet(animal="dog", name="Buddy")
+describe_pet(name="Kitty", animal="cat")
+```
+
+🌟 3.4 Variable-Length Arguments
+➕ *args → Non-keyword variable arguments
+```python
+def add_numbers(*args):
+    return sum(args)
+
+print(add_numbers(1, 2, 3, 4))  # Output: 10
+```
+📦 *args is treated as a tuple of values.
+
+🧩 **kwargs → Keyworded variable arguments
+```python
+def describe_person(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+describe_person(name="Alice", age=25, city="New York")
+```
+
+🔑 **kwargs is treated as a dictionary of named arguments.
+
+⚡ 4️⃣ Lambda Functions (Anonymous Functions)
+A lambda is a small, single-line function.
+
+📐 Syntax
+
+lambda arguments: expression
+
+Example:
+```python
+cube = lambda x: x ** 3
+print(cube(3))  # Output: 27
+```
+
+
+### 📁 Module 08: File Handling in Python
+File handling allows us to read and write data to files. Python provides built-in functions to handle files easily and efficiently.
+
+🗂️ File Modes in Python
+
+| Mode  | Description                            |
+|-------|----------------------------------------|
+| "r"   | Read (default mode)                    |
+| "w"   | Write (overwrites file if it exists)   |
+| "a"   | Append (adds content to the file)      |
+| "x"   | Exclusive creation (fails if file exists) |
+| "rb"  | Read binary                            |
+| "wb"  | Write binary                           |
+| "ab"  | Append binary                          |
+
+
+📖 Opening and Closing Files
+
+```python
+file = open("example.txt", "r")  # Open in read mode
+file.close()                     # Close the file
+```
+
+✅ Always close the file after use!
+
+✍️ Writing to a File
+```python
+file = open("sample.txt", "w")
+file.write("Hello, this is a test file.")
+file.close()
+```
+
+📚 Reading from Files
+🔹 Reading the entire content
+
+```python
+file = open("sample.txt", "r")
+content = file.read()
+print(content)
+file.close()
+```
+
+🔹 Reading line by line
+
+```python
+file = open("sample.txt", "r")
+line = file.readline()
+print(line)
+file.close()
+```
+
+🔹 Reading all lines into a list
+
+```python
+file = open("sample.txt", "r")
+lines = file.readlines()
+print(lines)
+file.close()
+```
+
+📝 Writing Multiple Lines
+
+```python
+lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+file = open("output.txt", "w")
+file.writelines(lines)
+file.close()
+```
+
+➕ Appending to a File
+
+```python
+file = open("output.txt", "a")
+file.write("This line will be appended.\n")
+file.close()
+```
+
+🤝 Using with Statement (Auto-closes File)
+
+```python
+with open("output.txt", "r") as file:
+    content = file.read()
+    print(content)
+# No need to explicitly close
+```
+
+🖼️ Working with Binary Files
+🔹 Reading a binary file
+
+
+```python
+with open("image.jpg", "rb") as file:
+    data = file.read()
+    print("Binary content:", data[:20])  # First 20 bytes
+```
+
+```python
+with open("copy.jpg", "wb") as new_file:
+    new_file.write(data)
+```
+
+
+🔍 Check if File Exists
+
+```python
+import os
+
+if os.path.exists("sample.txt"):
+    print("File exists")
+else:
+    print("File not found")
+
+```
+
+
+❌ Deleting a File
+
+```python
+import os
+
+os.remove("sample.txt")
+
+```
+
+✅ Tips:
+
+Always close the file or use with to handle it automatically.
+
+Use binary mode for images or non-text files.
+
+File handling is crucial for logging, storing data, and working with external files.
+
+
+
+
+
+
+
+
+
+
