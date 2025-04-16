@@ -155,6 +155,7 @@ print(name, age, height, is_student)
 
 ✅ Valid Examples:
 ```python
+FIRST_NAME = "Serge"
 my_variable = 10
 _myVar = "Python"
 age_2024 = 30
